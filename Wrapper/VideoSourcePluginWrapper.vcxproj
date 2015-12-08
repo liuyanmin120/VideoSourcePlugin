@@ -143,7 +143,7 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(OutDir)$(ProjectName).dll" "$(SolutionDir)..\OBS\rundir\plugins"</Command>
+      <Command>copy "$(OutDir)$(ProjectName).dll" "$(SolutionDir)..\OBS\rundir\plugins\MediaPlayerPlugin.dll"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -197,7 +197,7 @@
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(OutDir)$(ProjectName).dll" "$(SolutionDir)..\OBS\rundir\plugins"</Command>
+      <Command>copy "$(OutDir)$(ProjectName).dll" "$(SolutionDir)..\OBS\rundir\plugins\MediaPlayerPlugin.dll"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
