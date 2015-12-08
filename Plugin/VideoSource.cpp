@@ -22,11 +22,12 @@ VideoSource::VideoSource(XElement *data)
     config = new VideoSourceConfig(data);
     InitializeCriticalSection(&textureLock);
     UpdateSettings();
+	VideoSourcePlugin::instance->SetVlcMediaPlayer(mediaPlayer);
 }
 
 VideoSource::~VideoSource()
 { 
-
+	VideoSourcePlugin::instance->SetVlcMediaPlayer(nullptr);
     // media list and media list player
     libvlc_media_list_player_stop(mediaListPlayer);
     libvlc_media_list_player_release(mediaListPlayer);

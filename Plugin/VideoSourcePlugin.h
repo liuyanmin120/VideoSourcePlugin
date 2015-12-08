@@ -21,9 +21,14 @@ public:
     VideoSourcePlugin();
     ~VideoSourcePlugin();
 
+	void SetVlcMediaPlayer(libvlc_media_player_t *mediaPlayer);
+	libvlc_media_player_t *GetVlcMediaPlayer();
+
 private:
 	bool isDynamicLocale;
     libvlc_instance_t *vlc;
+	// add by liuym
+	libvlc_media_player_t *mediaPlayer_;
 
 public:
     libvlc_instance_t *GetVlc() { return vlc; }
@@ -35,3 +40,5 @@ EXTERN_DLL_EXPORT void OnStartStream();
 EXTERN_DLL_EXPORT void OnStopStream();
 EXTERN_DLL_EXPORT CTSTR GetPluginName();
 EXTERN_DLL_EXPORT CTSTR GetPluginDescription();
+//add by liuym
+EXTERN_DLL_EXPORT void* GetVlcObject();

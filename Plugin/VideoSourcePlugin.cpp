@@ -129,7 +129,14 @@ VideoSourcePlugin::~VideoSourcePlugin() {
     }
 
     isDynamicLocale = false;
+}
 
+void VideoSourcePlugin::SetVlcMediaPlayer(libvlc_media_player_t *mediaPlayer) {
+	mediaPlayer_ = mediaPlayer;
+}
+
+libvlc_media_player_t* VideoSourcePlugin::GetVlcMediaPlayer() {
+	return mediaPlayer_;
 }
 
 bool LoadPlugin()
@@ -164,6 +171,10 @@ CTSTR GetPluginName()
 CTSTR GetPluginDescription()
 {
     return STR("PluginDescription");
+}
+
+void* GetVlcObject() {
+	return VideoSourcePlugin::instance->GetVlcMediaPlayer();
 }
 
 BOOL CALLBACK DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
