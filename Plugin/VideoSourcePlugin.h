@@ -21,14 +21,15 @@ public:
     VideoSourcePlugin();
     ~VideoSourcePlugin();
 
-	void SetVlcMediaPlayer(libvlc_media_player_t *mediaPlayer);
-	libvlc_media_player_t *GetVlcMediaPlayer();
+	// add by liuym
+	void SetVlcObject(void* pVlcObj);
+	void *GetVlcObject();
 
 private:
 	bool isDynamicLocale;
     libvlc_instance_t *vlc;
 	// add by liuym
-	libvlc_media_player_t *mediaPlayer_;
+	void*	_pVlcObj[4];
 
 public:
     libvlc_instance_t *GetVlc() { return vlc; }
